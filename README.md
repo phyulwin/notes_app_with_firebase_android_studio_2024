@@ -26,3 +26,5 @@ If you'd like to contribute to this project, please create a new issue or submit
 
 ### License
 This project is licensed under the MIT License.
+
+Note to self: TestRun_123456_"C:\Users\[username]\AndroidStudioProjects\MyApplication\app\build\outputs\apk\debug\app-debug.apk"
