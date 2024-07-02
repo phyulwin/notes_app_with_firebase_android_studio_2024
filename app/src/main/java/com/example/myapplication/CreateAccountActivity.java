@@ -2,13 +2,21 @@ package com.example.myapplication;
 
 import android.os.Bundle;
 import android.util.Patterns;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class CreateAccountActivity extends AppCompatActivity {
     // Declare UI elements for user inputs and actions
@@ -42,7 +50,53 @@ public class CreateAccountActivity extends AppCompatActivity {
         String confirmPassword = confirmPasswordEditText.getText().toString();
 
         boolean isValidated = validateDate(email, password, confirmPassword);
+        if(!isValidated) {
+            return;
+        }
 
+        createAccountInFirebase(email, password);
+    }
+
+    void createAccountInFirebase(String email, String password) {
+        // Show progress indicator to the user while account creation is in progress
+        changeInProgress(true);
+
+        // Get an instance of FirebaseAuth
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+
+        // Create a new user with the provided email and password
+        firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(CreateAccountActivity.this,
+            new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        // Account creation successful
+                        Toast.makeText(CreateAccountActivity.this, "Successfully created account! Check email to verify.",
+                                Toast.LENGTH_SHORT).show();
+                        // Send email verification to the newly created account
+                        firebaseAuth.getCurrentUser().sendEmailVerification();
+                        // Sign out the user to prevent unverified access
+                        firebaseAuth.signOut();
+                        // Close the current activity
+                        finish();
+                    } else {
+                        // Account creation failed
+                        Toast.makeText(CreateAccountActivity.this, task.getException().getLocalizedMessage(),
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+    }
+
+
+    void changeInProgress(boolean inProgress) {
+        if(inProgress) {
+            progressBar.setVisibility(View.VISIBLE);
+            createAccountButton.setVisibility(View.GONE);
+        } else {
+            progressBar.setVisibility(View.GONE);
+            createAccountButton.setVisibility(View.VISIBLE);
+        }
     }
 
     boolean validateDate(String email, String password, String confirmPassword) {
