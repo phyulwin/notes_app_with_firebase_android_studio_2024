@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
+import android.util.Patterns;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -31,5 +32,34 @@ public class CreateAccountActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progress_bar);
         loginButtonTextView = findViewById(R.id.login_text_view_button);
 
+        createAccountButton.setOnClickListener(v-> createAccount());
+        loginButtonTextView.setOnClickListener(v-> finish());
+    }
+
+    void createAccount() {
+        String email = emailEditText.getText().toString();
+        String password = passwordEditText.getText().toString();
+        String confirmPassword = confirmPasswordEditText.getText().toString();
+
+        boolean isValidated = validateDate(email, password, confirmPassword);
+
+    }
+
+    boolean validateDate(String email, String password, String confirmPassword) {
+        //validate data input by the user
+
+        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            emailEditText.setError("Invalid Email Address.");
+            return false;
+        }
+        if(password.length()<6) {
+            passwordEditText.setError("Password must be 6 characters at least.");
+            return false;
+        }
+        if(!password.equals(confirmPassword)) {
+            confirmPasswordEditText.setError("Password does not match.");
+            return false;
+        }
+        return true;
     }
 }

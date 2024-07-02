@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "257658642137",
+    "project_id": "memoease-1923c",
+    "storage_bucket": "memoease-1923c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:257658642137:android:beb37c4a1ebb81861868c8",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrQQj2SkBmfQ51bNLF9m-aNz9WeG8SLcU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
