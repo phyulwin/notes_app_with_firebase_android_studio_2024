@@ -2,28 +2,27 @@
 Description
 A simple Note App that allows users to create and manage their notes.
 
-Screenshots
-Landing Page
-Landing Page
+## Screenshots
+[(image_url)](link_url)
+[(image_url)](link_url)
 
 This is the main entry point for users, where they can see an overview of their tasks and start adding new ones.
 
-Adding a New Task
-Add Task
+Adding a New Note
+[(image_url)](link_url)
 
 This feature allows users to add new tasks by entering a title and description.
-
-Task List
-Task List
+[(image_url)](link_url)
+[(image_url)](link_url)
 
 This feature displays a list of all tasks that have been added, with options to edit or delete each one.
 
-###Technical Details###
+### Technical Details
 Built using Android Studio
 Technologies: Java, Firebase
 
-###Contributing###
+### Contributing
 If you'd like to contribute to this project, please create a new issue or submit a pull request.
 
-###License###
+### License
 This project is licensed under the MIT License.
