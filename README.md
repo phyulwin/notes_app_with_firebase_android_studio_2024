@@ -1,8 +1,8 @@
-# Memo Ease NoteApp
+# Memo Ease NotesApp
 ## Description
-A simple Note App that allows users to create and manage their notes.
+A simple Notes App that allows users to create and manage their notes.
 
-## Screenshots
+### Screenshots
 [(image_url)](link_url)
 [(image_url)](link_url)
 
