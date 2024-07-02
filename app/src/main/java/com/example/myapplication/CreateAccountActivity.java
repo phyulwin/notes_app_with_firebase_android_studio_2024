@@ -69,10 +69,10 @@ public class CreateAccountActivity extends AppCompatActivity {
             new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
+                    changeInProgress(false);
                     if (task.isSuccessful()) {
                         // Account creation successful
-                        Toast.makeText(CreateAccountActivity.this, "Successfully created account! Check email to verify.",
-                                Toast.LENGTH_SHORT).show();
+                        Utility.showToast(CreateAccountActivity.this, "Successfully created account! Check email to verify.");
                         // Send email verification to the newly created account
                         firebaseAuth.getCurrentUser().sendEmailVerification();
                         // Sign out the user to prevent unverified access
@@ -81,8 +81,7 @@ public class CreateAccountActivity extends AppCompatActivity {
                         finish();
                     } else {
                         // Account creation failed
-                        Toast.makeText(CreateAccountActivity.this, task.getException().getLocalizedMessage(),
-                                Toast.LENGTH_SHORT).show();
+                        Utility.showToast(CreateAccountActivity.this, task.getException().getLocalizedMessage());
                     }
                 }
             });
@@ -100,7 +99,7 @@ public class CreateAccountActivity extends AppCompatActivity {
     }
 
     boolean validateDate(String email, String password, String confirmPassword) {
-        //validate data input by the user
+        // Validate data input by the user
 
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             emailEditText.setError("Invalid Email Address.");
