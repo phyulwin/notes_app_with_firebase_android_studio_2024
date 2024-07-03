@@ -3,8 +3,8 @@
 A simple Notes App that allows users to create and manage their notes.
 
 ### Screenshots
-[(image_url)](link_url)
-[(image_url)](link_url)
+![Local Image](app/src/App%20Screenshots/Screenshot_20240702_165947.png)
+![Local Image](app/src/App%20Screenshots/Screenshot_20240702_170403.png)
 
 This is the main entry point for users, where they can sign up for a new account or log in with an existing account. 
 
@@ -18,8 +18,8 @@ This feature allows users to add new notes by entering a title and content.
 This feature displays a list of all tasks that have been added, with options to edit or delete each one.
 
 ### Technical Details
-Built using **Android Studio**
-Technologies: **Java, Firebase**
+##### Built using **Android Studio**
+##### Technologies: **Java, Firebase**
 ![Local Image](app/src/App%20Screenshots/Screenshot%202024-07-02%20170148.jpg)
 
 ### Contributing
