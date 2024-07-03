@@ -1,6 +1,6 @@
 # Memo Ease NotesApp
 ## Description
-A simple Notes App that allows users to create and manage their notes. To run the app on an android device, please intall app-debug.apk from the amster branch.
+A simple Notes App that allows users to create and manage their notes. To run the app on an android device, please intall [app-debug.apk](https://github.com/phyulwin/notes_app_with_firebase_android_studio_2024/blob/master/app-debug.apk) from the master branch.
 
 ### Screenshots
 ![Local Image](app/src/App%20Screenshots/Screenshot_20240702_165947.png)
