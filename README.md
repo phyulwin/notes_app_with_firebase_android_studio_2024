@@ -10,8 +10,8 @@ This is the main entry point for users, where they can sign up for a new account
 
 ### Adding a New Note
 This feature allows users to add new notes by entering a title and content.
-[(image_url)](app/src/App%20Screenshots/Screenshot_20240702_170102.png)
-[(image_url)](app/src/App%20Screenshots/Screenshot_20240702_170028.png)
+![Local Image](app/src/App%20Screenshots/Screenshot_20240702_170102.png)
+![Local Image](app/src/App%20Screenshots/Screenshot_20240702_170028.png)
 
 This feature displays a list of all notes that have been added, with options to edit or delete each one.
 
